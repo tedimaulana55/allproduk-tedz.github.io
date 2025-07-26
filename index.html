@@ -115,14 +115,14 @@
 
     <div class="card">
       <h2>Panel Pterodactyl</h2>
-      <p>Cocok Buat Kalian Yang Sewa Bot dan Buka Murid bug, panel Fast Anti Delay</p>
+      <p>Cocok Buatkan Kalian Yang Sewa Bot dan Buka Murid bug, panel Fast Anti Delay</p>
       <a href="panel.html" class="btn">Lihat Harga</a>
     </div>
 
     <div class="card">
       <h2>Murban / Murid Banned</h2>
       <p>Bisa Manjadi Kang Banned Dan Bisa Opan Jasa Banned</p>
-      <a href="banned.html" class="btn">Lihat Harga</a>
+      <a href="murban.html" class="btn">Lihat Harga</a>
     </div>
 
     <div class="card">
@@ -130,6 +130,34 @@
       <p>Menerima pembayaran melalui DANA, GOPAY, DAN QRIS.</p>
       <a href="payment.html" class="btn">Cek Metode</a>
     </div>
+    
+    <!-- Kontrol Musik -->
+  <div style="text-align: center; margin: 30px 0;">
+    <button id="musicBtn" onclick="toggleMusic()" style="padding: 10px 20px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+      ▶️ Mainkan Musik
+    </button>
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Browser kamu tidak mendukung audio.
+    </audio>
+  </div>
+  
+  <script>
+  const music = document.getElementById("bgMusic");
+  const musicBtn = document.getElementById("musicBtn");
+  let isPlaying = false;
+
+  function toggleMusic() {
+    if (isPlaying) {
+      music.pause();
+      musicBtn.textContent = "▶️ Mainkan Musik";
+    } else {
+      music.play().catch(err => alert("Gagal memutar musik: " + err.message));
+      musicBtn.textContent = "⏸ Hentikan Musik";
+    }
+    isPlaying = !isPlaying;
+  }
+</script>
 
   </section>
 
